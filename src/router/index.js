@@ -1,26 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Test from '@/views/Test.vue'
+import List from '@/views/List'
+import Createa from '@/views/Createa'
+
 
 Vue.use(VueRouter)
 
-  const routes = [
-  {
+const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'List',
+    redirect: '/list'
+  },
+  // 测试路由
+  {
+    path: '/test',
+    name: Test,
+    component: Test
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/',
+    name: List,
+    component: List
+  },
+  // 文章列表
+  {
+    path: '/list',
+    name: List,
+    component: List
+  },
+  // 创建文章
+  {
+    path: '/list/create',
+    name: Createa,
+    component: Createa
   }
+
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
