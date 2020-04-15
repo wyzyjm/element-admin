@@ -18,6 +18,16 @@ export default {
     return {
       tableData: Array(20).fill(item)
     };
+  },
+  created() {
+    this.getUser();
+  },
+  methods: {
+    async getUser() {
+      // const { data: res } = await this.$http.get("/api");
+      const { data: res } = await this.$http.get("/api");
+      console.log(res);
+    }
   }
 };
 </script>

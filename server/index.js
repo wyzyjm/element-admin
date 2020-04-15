@@ -27,15 +27,13 @@ function query() {
 
 }
 
-app.get('/', (req, res) => {
-
+app.get('/api', (req, res) => {
     res.send({
         name: '小明',
         age: 18,
-        req: req.body
     })
 });
 
 app.listen(3000, () => {
-    console.log('http://localhost:3000/');
+    console.log('http://localhost:3000');
 })
